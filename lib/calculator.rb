@@ -25,18 +25,61 @@ class Calculator
   end
 
   def calculate
-    @split_input.each_with_index do |x, index|
-      if x == "/"
-        result = operation(@split_input[index-1], @split_input[index], @split_input[index+1])
-        # replaces the operator into the result we got from the operation calculation
-        # eg. 2 * 3 = 6 ... so * will now equal 6 and we get '2 6 3'
-        @split_input[index] = result
-        @split_input.delete_at(index+1)
-        @split_input.delete_at(index-1)
+    while @split_input.include?("/") do
+      @split_input.each_with_index do |x, index|
+        if x == "/"
+          result = operation(@split_input[index-1], @split_input[index], @split_input[index+1])
+          # replaces the operator into the result we got from the operation calculation
+          # eg. 2 * 3 = 6 ... so * will now equal 6 and we get '2 6 3'
+          @split_input[index] = result
+          @split_input.delete_at(index+1)
+          @split_input.delete_at(index-1)
+        end
       end
     end
-    p @split_input
+
+    while @split_input.include?("*") do
+      @split_input.each_with_index do |x, index|
+        if x == "*"
+          result = operation(@split_input[index-1], @split_input[index], @split_input[index+1])
+          # replaces the operator into the result we got from the operation calculation
+          # eg. 2 * 3 = 6 ... so * will now equal 6 and we get '2 6 3'
+          @split_input[index] = result
+          @split_input.delete_at(index+1)
+          @split_input.delete_at(index-1)
+        end
+      end
+    end
+
+    while @split_input.include?("+") do
+      @split_input.each_with_index do |x, index|
+        if x == "+"
+          result = operation(@split_input[index-1], @split_input[index], @split_input[index+1])
+          # replaces the operator into the result we got from the operation calculation
+          # eg. 2 * 3 = 6 ... so * will now equal 6 and we get '2 6 3'
+          @split_input[index] = result
+          @split_input.delete_at(index+1)
+          @split_input.delete_at(index-1)
+        end
+      end
+    end
+
+    while @split_input.include?("-") do
+      @split_input.each_with_index do |x, index|
+        if x == "-"
+          result = operation(@split_input[index-1], @split_input[index], @split_input[index+1])
+          # replaces the operator into the result we got from the operation calculation
+          # eg. 2 * 3 = 6 ... so * will now equal 6 and we get '2 6 3'
+          @split_input[index] = result
+          @split_input.delete_at(index+1)
+          @split_input.delete_at(index-1)
+        end
+      end
+    end
+
+    @split_input[0]
   end
+
 
 
   # def calculate(string)
