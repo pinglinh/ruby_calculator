@@ -23,5 +23,12 @@ describe CalculatorInterface do
     expect(output.string).to eq("4.0\n")
   end
 
+  it "should print a prompt message" do
+    output = StringIO.new
+    calculator_interface = CalculatorInterface.new(nil, output)
+    calculator_interface.prompt_message
+    expect(output.string).to eq("Welcome. I am a calculator based on BODMAS. Type your calculation and I will calculator it for you\n")
+  end
+
 
 end
