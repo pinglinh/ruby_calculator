@@ -16,6 +16,7 @@ class CalculatorInterface
   end
 
   def CALCULATE
+      prompt_message
       calculator = Calculator.new
       calculator.tokenize(read_line)
       answer = calculator.calculate
