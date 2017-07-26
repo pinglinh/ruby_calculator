@@ -1,6 +1,6 @@
 class Calculator
   def tokenize(input)
-    @split_input = input.split(" ")
+    @split_input = input.split(/\s+/)
 
     @split_input.map! do |token|
         Float(token) rescue token
@@ -25,6 +25,7 @@ class Calculator
   end
 
   def calculate
+    # we have to do a while loop which checks for / constantly otherwise it will stop checking after it has found the first /
     while @split_input.include?("/") do
       @split_input.each_with_index do |x, index|
         if x == "/"
