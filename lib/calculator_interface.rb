@@ -11,6 +11,10 @@ class CalculatorInterface
     @input.readline.chomp
   end
 
+  def prompt_message
+    @output.puts "Welcome. I am a calculator based on BODMAS. Type your calculation and I will calculator it for you"
+  end
+
   def CALCULATE
       calculator = Calculator.new
       calculator.tokenize(read_line)
