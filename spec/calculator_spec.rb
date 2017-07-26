@@ -46,15 +46,30 @@ describe Calculator do
     calculator = Calculator.new
     calculator.tokenize("8 / 2 / 2")
     expect(calculator.calculate).to eq(2)
+
+
   end
 
-  xit 'returns calculated result' do
+  it 'returns calculated result' do
     calculator = Calculator.new
-    expect(calculator.calculate("4 / 2 + 8 * 7")).to eq(58)
-    expect(calculator.calculate("2 + 5")).to eq(7)
-    expect(calculator.calculate("2 - 5")).to eq(-3)
-    expect(calculator.calculate("10 / 5")).to eq(2)
-    expect(calculator.calculate("7 + 5")).to eq(12)
+
+    calculator.tokenize("8 + 2 * 20 / 4 - 2")
+    expect(calculator.calculate).to eq(16)
+
+    calculator.tokenize("4 / 2 + 8 * 7")
+    expect(calculator.calculate).to eq(58)
+
+    calculator.tokenize("2 + 5")
+    expect(calculator.calculate).to eq(7)
+
+    calculator.tokenize("2 - 5")
+    expect(calculator.calculate).to eq(-3)
+
+    calculator.tokenize("10 / 5")
+    expect(calculator.calculate).to eq(2)
+
+    calculator.tokenize("7 + 5")
+    expect(calculator.calculate).to eq(12)
   end
 
   # it 'adds a number' do
