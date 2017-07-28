@@ -80,20 +80,4 @@ class Calculator
 
     @split_input[0]
   end
-
-
-
-  # def calculate(string)
-  #   tokenized_array = tokenize(string)
-  #   if tokenized_array[1] == "/"
-  #     tokenized_array[0] / tokenized_array[2]
-  #   elsif tokenized_array[1] == "*"
-  #     tokenized_array[0] * tokenized_array[2]
-  #   elsif tokenized_array[1] == "+"
-  #     tokenized_array[0] + tokenized_array[2]
-  #   else
-  #     tokenized_array[0] - tokenized_array[2]
-  #   end
-  # end
-
 end
