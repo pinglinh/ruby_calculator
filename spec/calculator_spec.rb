@@ -46,8 +46,6 @@ describe Calculator do
     calculator = Calculator.new
     calculator.tokenize("8 / 2 / 2")
     expect(calculator.calculate).to eq(2)
-
-
   end
 
   it 'returns calculated result' do
@@ -71,13 +69,4 @@ describe Calculator do
     calculator.tokenize("7 + 5")
     expect(calculator.calculate).to eq(12)
   end
-
-  # it 'adds a number' do
-  #   calculator = Calculator.new
-  #   expect(calculator.add("3 + 3")).to eq("6")
-  #   expect(calculator.add("3 + 5")).to eq("8")
-  #   expect(calculator.add("3 + 2 + 10")).to eq("10")
-  # end
-
-  # it 'subrac'
 end

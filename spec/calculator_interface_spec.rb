@@ -31,6 +31,4 @@ describe CalculatorInterface do
     calculator_interface.prompt_message
     expect(output.string).to eq("Welcome. I am a calculator based on BODMAS. Type your calculation and I will calculator it for you\n")
   end
-
-
 end
